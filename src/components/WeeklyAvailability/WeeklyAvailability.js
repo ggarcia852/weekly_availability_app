@@ -1,5 +1,12 @@
 import React from "react";
 import AvailablePeriod from "../AvailablePeriod/AvailablePeriod";
+import {
+  Container,
+  StyledHeading,
+  StyledMessage,
+  StyledTable,
+  StyledTableHeader,
+} from "./WeeklyAvailabilityStyles";
 
 export default function WeeklyAvailability({
   availablePeriods,
@@ -22,25 +29,29 @@ export default function WeeklyAvailability({
     );
   };
   return (
-    <>
-      <h1>Weekly Availability</h1>
-      <p>{userMessage}</p>
-      <table>
-        <tr>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-        </tr>
-        <tr>
-          {getAvailablePeriods("Monday")}
-          {getAvailablePeriods("Tuesday")}
-          {getAvailablePeriods("Wednesday")}
-          {getAvailablePeriods("Thursday")}
-          {getAvailablePeriods("Friday")}
-        </tr>
-      </table>
-    </>
+    <Container>
+      <StyledHeading>Weekly Availability</StyledHeading>
+      <StyledMessage>{userMessage}</StyledMessage>
+      <StyledTable>
+        <thead>
+          <tr>
+            <StyledTableHeader>Monday</StyledTableHeader>
+            <StyledTableHeader>Tuesday</StyledTableHeader>
+            <StyledTableHeader>Wednesday</StyledTableHeader>
+            <StyledTableHeader>Thursday</StyledTableHeader>
+            <StyledTableHeader>Friday</StyledTableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {getAvailablePeriods("Monday")}
+            {getAvailablePeriods("Tuesday")}
+            {getAvailablePeriods("Wednesday")}
+            {getAvailablePeriods("Thursday")}
+            {getAvailablePeriods("Friday")}
+          </tr>
+        </tbody>
+      </StyledTable>
+    </Container>
   );
 }
