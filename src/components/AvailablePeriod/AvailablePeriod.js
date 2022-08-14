@@ -1,15 +1,30 @@
 import React from "react";
+import {
+  Container,
+  StyledAvailablePeriod,
+  StyledButton,
+} from "./AvailablePeriodStyles";
 
 export default function AvailablePeriod({ deleteAvailablePeriod, el }) {
   const handleDelete = (item) => {
     deleteAvailablePeriod(item);
   };
+  const days = {
+    monday: "#23AFD6",
+    tuesday: "#71B578",
+    wednesday: "#EF553C",
+    thursday: "#D5B600",
+    friday: "#815799",
+  };
+  const day = Object.keys(days).filter((key) => key === el.day)[0];
+  const color = days[day];
+
   return (
-    <li key={el.id}>
-      <span>
-        {el.day}: {el.start} - {el.end}
-      </span>
-      <button onClick={(e) => handleDelete(el)}>X</button>
-    </li>
+    <Container>
+      <StyledAvailablePeriod key={el.id} color={color}>
+        {el.start} - {el.end}
+      </StyledAvailablePeriod>
+      <StyledButton onClick={(e) => handleDelete(el)}>X</StyledButton>
+    </Container>
   );
 }

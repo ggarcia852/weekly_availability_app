@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WeeklyAvailability from "./components/WeeklyAvailability/WeeklyAvailability";
 import AddAvailability from "./components/AddAvailabilityForm/AddAvailabilityForm";
+import { GlobalStyle } from "./GlobalStyles/GlobalStyles";
 
 export default function App() {
   const [addAvailability, setAddAvailability] = useState(false);
@@ -52,6 +53,7 @@ export default function App() {
 
   return (
     <>
+      <GlobalStyle />
       <WeeklyAvailability
         availablePeriods={availablePeriods}
         deleteAvailablePeriod={handleDeleteAvailablePeriod}

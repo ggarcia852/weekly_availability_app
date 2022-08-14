@@ -3,8 +3,10 @@ import AvailablePeriod from "../AvailablePeriod/AvailablePeriod";
 import {
   Container,
   StyledHeading,
+  StyledList,
   StyledMessage,
   StyledTable,
+  StyledTableCell,
   StyledTableHeader,
 } from "./WeeklyAvailabilityStyles";
 
@@ -16,16 +18,17 @@ export default function WeeklyAvailability({
   const getAvailablePeriods = (day) => {
     const availability = availablePeriods.filter((el) => el.day === day);
     return (
-      <td>
-        <ul>
+      <StyledTableCell>
+        <StyledList>
           {availability.map((el) => (
             <AvailablePeriod
               deleteAvailablePeriod={deleteAvailablePeriod}
               el={el}
+              key={el.id}
             />
           ))}
-        </ul>
-      </td>
+        </StyledList>
+      </StyledTableCell>
     );
   };
   return (
@@ -44,11 +47,11 @@ export default function WeeklyAvailability({
         </thead>
         <tbody>
           <tr>
-            {getAvailablePeriods("Monday")}
-            {getAvailablePeriods("Tuesday")}
-            {getAvailablePeriods("Wednesday")}
-            {getAvailablePeriods("Thursday")}
-            {getAvailablePeriods("Friday")}
+            {getAvailablePeriods("monday")}
+            {getAvailablePeriods("tuesday")}
+            {getAvailablePeriods("wednesday")}
+            {getAvailablePeriods("thursday")}
+            {getAvailablePeriods("friday")}
           </tr>
         </tbody>
       </StyledTable>
