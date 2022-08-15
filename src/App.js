@@ -83,16 +83,20 @@ export default function App() {
           <AddAvailability addAvailablePeriod={handleAddAvailablePeriod} />
         )}
       </div>
-      <span>
-        <StyledOptionButton onClick={handlePrintAvailability}>
-          Print Availability
-        </StyledOptionButton>
-      </span>
-      <span>
-        <StyledOptionButton onClick={handleResetAvailability}>
-          Reset Availability
-        </StyledOptionButton>
-      </span>
+      {availablePeriods.length > 0 && (
+        <div>
+          <span>
+            <StyledOptionButton onClick={handlePrintAvailability}>
+              Print Availability
+            </StyledOptionButton>
+          </span>
+          <span>
+            <StyledOptionButton onClick={handleResetAvailability}>
+              Reset Availability
+            </StyledOptionButton>
+          </span>
+        </div>
+      )}
     </>
   );
 }
