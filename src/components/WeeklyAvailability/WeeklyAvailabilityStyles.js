@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 export const StyledHeading = styled.h1`
@@ -11,9 +11,10 @@ export const StyledHeading = styled.h1`
 `;
 
 export const StyledMessage = styled.div`
-  color: red;
+  color: #EF553C;
   height: 25px;
-  font-size: 20px;
+  font-size: 14px;
+  padding-bottom: 5px;
 `;
 
 export const StyledTable = styled.table`

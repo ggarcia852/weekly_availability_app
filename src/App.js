@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import WeeklyAvailability from "./components/WeeklyAvailability/WeeklyAvailability";
 import AddAvailability from "./components/AddAvailabilityForm/AddAvailabilityForm";
-import { GlobalStyle } from "./GlobalStyles/GlobalStyles";
+import {
+  GlobalStyle,
+  StyledButton,
+  StyledOptionButton,
+} from "./GlobalStyles/GlobalStyles";
 
 export default function App() {
   const [addAvailability, setAddAvailability] = useState(false);
@@ -29,6 +33,10 @@ export default function App() {
     const newPeriods = availablePeriods.filter((el) => el.id !== item.id);
     setAvailablePeriods(newPeriods);
     setInStorage(newPeriods);
+    setUserMessage("Available period deleted.");
+    setTimeout(() => {
+      setUserMessage("");
+    }, "2500");
   };
 
   const handleAddAvailablePeriod = (day, start, end) => {
@@ -37,7 +45,7 @@ export default function App() {
     setAvailablePeriods(availability);
     setInStorage(availability);
     setAddAvailability(false);
-    setUserMessage("Successfully added new availability.");
+    setUserMessage("Successfully added new availability!");
     setTimeout(() => {
       setUserMessage("");
     }, "2500");
@@ -45,10 +53,16 @@ export default function App() {
 
   const handlePrintAvailability = () => {
     console.log(availablePeriods);
-    setUserMessage("Weekly availability printed.");
+    setUserMessage("Weekly availability printed!");
     setTimeout(() => {
       setUserMessage("");
     }, "2500");
+  };
+
+  const handleResetAvailability = () => {
+    const resetAvailability = [];
+    setAvailablePeriods(resetAvailability);
+    setInStorage(resetAvailability);
   };
 
   return (
@@ -60,18 +74,25 @@ export default function App() {
         userMessage={userMessage}
       />
       <div>
-        <button onClick={handleAddAvailability}>
+        <StyledButton onClick={handleAddAvailability}>
           {addAvailability ? "Close" : "Add Availability"}
-        </button>
+        </StyledButton>
       </div>
       <div>
         {addAvailability && (
           <AddAvailability addAvailablePeriod={handleAddAvailablePeriod} />
         )}
       </div>
-      <div>
-        <button onClick={handlePrintAvailability}>Print Availability</button>
-      </div>
+      <span>
+        <StyledOptionButton onClick={handlePrintAvailability}>
+          Print Availability
+        </StyledOptionButton>
+      </span>
+      <span>
+        <StyledOptionButton onClick={handleResetAvailability}>
+          Reset Availability
+        </StyledOptionButton>
+      </span>
     </>
   );
 }

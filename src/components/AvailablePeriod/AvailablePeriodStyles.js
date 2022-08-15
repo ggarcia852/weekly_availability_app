@@ -17,7 +17,7 @@ export const StyledAvailablePeriod = styled.li.attrs((props) => ({
   list-style: none;
   opacity: 90%;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   padding: 5px 10px;
 `;
 

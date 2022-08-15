@@ -34,7 +34,7 @@ export default function WeeklyAvailability({
   return (
     <Container>
       <StyledHeading>Weekly Availability</StyledHeading>
-      <StyledMessage>{userMessage}</StyledMessage>
+      <StyledMessage>{availablePeriods.length === 0 ? <div>*Add Availability below to set your weekly availability!</div> : userMessage}</StyledMessage>
       <StyledTable>
         <thead>
           <tr>

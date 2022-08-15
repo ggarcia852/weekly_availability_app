@@ -1,10 +1,29 @@
 import React, { useState } from "react";
-import { Container, StyledForm, StyledText } from "./AddAvailabilityFormStyles";
+import {
+  Container,
+  StyledForm,
+  StyledSelect,
+  StyledSubmitButton,
+} from "./AddAvailabilityFormStyles";
 
 export default function AddAvailabilityForm({ addAvailablePeriod }) {
   const [day, setDay] = useState("");
   const [start, setStart] = useState("09:00");
   const [end, setEnd] = useState("17:00");
+
+  const times = [
+    "9:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "1:00 PM",
+    "2:00 PM",
+    "3:00 PM",
+    "4:00 PM",
+    "5:00 PM",
+  ];
+  const startTimes = times.slice(0, -1);
+  const endTimes = times.slice(1);
 
   const dayChange = (e) => {
     const day = e.target.value;
@@ -33,49 +52,54 @@ export default function AddAvailabilityForm({ addAvailablePeriod }) {
           <legend>Select your availability: </legend>
           <div>
             <label htmlFor="day-select">Day: </label>
-            <select
+            <StyledSelect
               name="days-of-week"
               id="day-select"
               onChange={dayChange}
               required
             >
-              <option value="">--Please select a day--</option>
+              <option value="">--Select a day--</option>
               <option value="monday">Monday</option>
               <option value="tuesday">Tuesday</option>
               <option value="wednesday">Wednesday</option>
               <option value="thursday">Thursday</option>
               <option value="friday">Friday</option>
-            </select>
+            </StyledSelect>
           </div>
           <div>
-            <StyledText>Select a time between 9:00AM - 5:00PM: </StyledText>
-            <label htmlFor="start-time-select">Start time: </label>
-            <input
-              id="start-time-select"
-              type="time"
-              value={start}
+            <label htmlFor="start-select">Start time: </label>
+            <StyledSelect
+              name="start-time"
+              id="start-select"
               onChange={startTimeChange}
-              min="09:00"
-              max="16:00"
-              step="3600"
               required
-            />
+            >
+              <option value="">--Select a start time--</option>
+              {startTimes.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+            </StyledSelect>
           </div>
           <div>
-            <label htmlFor="end-time-select">End time: </label>
-            <input
-              id="end-time-select"
-              type="time"
-              value={end}
+            <label htmlFor="end-select">End time: </label>
+            <StyledSelect
+              name="end-time"
+              id="end-select"
               onChange={endTimeChange}
-              min="10:00"
-              max="17:00"
-              step="3600"
               required
-            />
+            >
+              <option value="">--Select an end time--</option>
+              {endTimes.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+            </StyledSelect>
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <StyledSubmitButton type="submit">Submit</StyledSubmitButton>
           </div>
         </fieldset>
       </StyledForm>

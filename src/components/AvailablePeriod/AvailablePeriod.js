@@ -13,7 +13,7 @@ export default function AvailablePeriod({ deleteAvailablePeriod, el }) {
     monday: "#23AFD6",
     tuesday: "#71B578",
     wednesday: "#EF553C",
-    thursday: "#D5B600",
+    thursday: "#D5B60D",
     friday: "#815799",
   };
   const day = Object.keys(days).filter((key) => key === el.day)[0];
