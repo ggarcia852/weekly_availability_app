@@ -32,29 +32,37 @@ export default function WeeklyAvailability({
     );
   };
   return (
-    <Container>
+    <>
       <StyledHeading>Weekly Availability</StyledHeading>
-      <StyledMessage>{availablePeriods.length === 0 ? <div>*Add Availability below to set your weekly availability!</div> : userMessage}</StyledMessage>
-      <StyledTable>
-        <thead>
-          <tr>
-            <StyledTableHeader>Monday</StyledTableHeader>
-            <StyledTableHeader>Tuesday</StyledTableHeader>
-            <StyledTableHeader>Wednesday</StyledTableHeader>
-            <StyledTableHeader>Thursday</StyledTableHeader>
-            <StyledTableHeader>Friday</StyledTableHeader>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {getAvailablePeriods("monday")}
-            {getAvailablePeriods("tuesday")}
-            {getAvailablePeriods("wednesday")}
-            {getAvailablePeriods("thursday")}
-            {getAvailablePeriods("friday")}
-          </tr>
-        </tbody>
-      </StyledTable>
-    </Container>
+      <Container>
+        <StyledMessage>
+          {availablePeriods.length === 0 ? (
+            <div>*Add Availability below to set your weekly availability!</div>
+          ) : (
+            userMessage
+          )}
+        </StyledMessage>
+        <StyledTable>
+          <thead>
+            <tr>
+              <StyledTableHeader>Monday</StyledTableHeader>
+              <StyledTableHeader>Tuesday</StyledTableHeader>
+              <StyledTableHeader>Wednesday</StyledTableHeader>
+              <StyledTableHeader>Thursday</StyledTableHeader>
+              <StyledTableHeader>Friday</StyledTableHeader>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {getAvailablePeriods("monday")}
+              {getAvailablePeriods("tuesday")}
+              {getAvailablePeriods("wednesday")}
+              {getAvailablePeriods("thursday")}
+              {getAvailablePeriods("friday")}
+            </tr>
+          </tbody>
+        </StyledTable>
+      </Container>
+    </>
   );
 }

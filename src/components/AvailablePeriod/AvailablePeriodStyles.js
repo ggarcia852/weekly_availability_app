@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 50px;
   align-items: center;
   justify-content: center;
+
 `;
 
 export const StyledAvailablePeriod = styled.li.attrs((props) => ({
@@ -19,6 +20,8 @@ export const StyledAvailablePeriod = styled.li.attrs((props) => ({
   color: white;
   font-size: 16px;
   padding: 5px 10px;
+  max-width: 200px;
+  min-width: 130px;
 `;
 
 export const StyledButton = styled.button`

@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   text-align: center;
   margin-bottom: 30px;
+  overflow: auto;
+
 `;
 
 export const StyledHeading = styled.h1`
@@ -19,6 +21,7 @@ export const StyledMessage = styled.div`
 
 export const StyledTable = styled.table`
   margin: auto;
+
 `;
 
 export const StyledTableHeader = styled.th`
