@@ -30,6 +30,8 @@ export const StyledButton = styled.button`
   font-weight: 600;
   color: red;
   border: none;
+  padding-left: 2px;
+  padding-right 10px;
   &:hover {
     cursor: pointer;
   }

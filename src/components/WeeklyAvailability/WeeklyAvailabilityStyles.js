@@ -27,6 +27,7 @@ export const StyledTable = styled.table`
 export const StyledTableHeader = styled.th`
   border-bottom: 1px solid black;
   font-size: 25px;
+  min-width: 130px;
 `;
 
 export const StyledTableCell = styled.td`

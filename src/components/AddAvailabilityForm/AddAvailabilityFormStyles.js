@@ -4,10 +4,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  // width: 100vw;
 `;
 
 export const StyledForm = styled.form`
-  width: 30%;
   font-size: 18px;
   color: #3e9399;
 `;
