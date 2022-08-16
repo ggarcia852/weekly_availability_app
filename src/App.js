@@ -60,9 +60,11 @@ export default function App() {
   };
 
   const handleResetAvailability = () => {
-    const resetAvailability = [];
-    setAvailablePeriods(resetAvailability);
-    setInStorage(resetAvailability);
+    if (window.confirm("Reset all availability?")) {
+      const resetAvailability = [];
+      setAvailablePeriods(resetAvailability);
+      setInStorage(resetAvailability);
+    }
   };
 
   return (

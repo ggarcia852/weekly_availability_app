@@ -7,7 +7,9 @@ import {
 
 export default function AvailablePeriod({ deleteAvailablePeriod, el }) {
   const handleDelete = (item) => {
-    deleteAvailablePeriod(item);
+    if (window.confirm("Delete available period?")) {
+      deleteAvailablePeriod(item);
+    }
   };
   const days = {
     monday: "#23AFD6",
