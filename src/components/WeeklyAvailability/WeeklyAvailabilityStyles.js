@@ -4,7 +4,6 @@ export const Container = styled.div`
   text-align: center;
   margin-bottom: 30px;
   overflow: auto;
-
 `;
 
 export const StyledHeading = styled.h1`
@@ -13,7 +12,7 @@ export const StyledHeading = styled.h1`
 `;
 
 export const StyledMessage = styled.div`
-  color: #EF553C;
+  color: #ef553c;
   height: 25px;
   font-size: 14px;
   padding-bottom: 5px;
@@ -21,7 +20,6 @@ export const StyledMessage = styled.div`
 
 export const StyledTable = styled.table`
   margin: auto;
-
 `;
 
 export const StyledTableHeader = styled.th`
