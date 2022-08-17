@@ -36,7 +36,7 @@ export default function App() {
     setUserMessage("Available period deleted.");
     setTimeout(() => {
       setUserMessage("");
-    }, "2500");
+    }, 2500);
   };
 
   const handleAddAvailablePeriod = (day, start, end) => {
@@ -48,7 +48,7 @@ export default function App() {
     setUserMessage("Successfully added new availability!");
     setTimeout(() => {
       setUserMessage("");
-    }, "2500");
+    }, 2500);
   };
 
   const handlePrintAvailability = () => {
@@ -56,7 +56,7 @@ export default function App() {
     setUserMessage("Weekly availability printed!");
     setTimeout(() => {
       setUserMessage("");
-    }, "2500");
+    }, 2500);
   };
 
   const handleResetAvailability = () => {
